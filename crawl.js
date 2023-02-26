@@ -28,7 +28,7 @@ async function getImages(url, maxDepth, currentDepth = 0) {
 
             let link = $(linkElement).attr('href');
 
-            if (link.charAt(0) !== '#' && !link.startsWith('javascript:') && i < 10) {
+            if (link.charAt(0) !== '#' && !link.startsWith('javascript:') && i < 5) {
                 if (!link.startsWith('http')) {
                     link = new URL(link, (new URL(url)).origin).href
                 }
