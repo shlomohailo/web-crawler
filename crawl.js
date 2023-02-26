@@ -11,7 +11,11 @@ async function getImages(url, maxDepth, currentDepth = 0) {
 
     $('img').each(function (i, img) {
 
-        const imageUrl = $(img).attr('src');
+        let imageUrl = $(img).attr('src');
+        if (imageUrl.startsWith('//')) {
+            imageUrl =  "https:" + imageUrl
+        }
+        
         results.push({
             imageUrl,
             sourceUrl: url,
